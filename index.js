@@ -29,10 +29,6 @@ themeToggle.addEventListener('click', (e) => {
 
 
 flowers.forEach(flower => {
-  flower.addEventListener('mouseenter', (e) => {
-    e.target.closest("button").classList.toggle("is-glowing");
-
-  })
   flower.addEventListener('click', (e) => {
     e.target.closest("button").classList.toggle("is-glowing");
 
