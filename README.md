@@ -12,6 +12,7 @@ Lunaria is an interactive virtual flower garden built with HTML, Tailwind CSS, C
 
 - Interactive glowing flowers
 - Dynamic day and night mode
+- Persistent theme preference using LocalStorage
 - Animated stars and shooting star
 - Floating fireflies with smooth animations
 - About overlay with interaction guide
