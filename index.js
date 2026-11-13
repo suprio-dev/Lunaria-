@@ -11,22 +11,61 @@ const flowers = document.querySelectorAll(".flower");
 
 let isThemeToggleClick = false;
 
-themeToggle.addEventListener('click', (e) => {
-  isThemeToggleClick = !isThemeToggleClick;
-  body.classList.toggle("day-mode");
-  if (!isThemeToggleClick) {
-    modeLabel.textContent = "Midnight Garden";
-    userGuide.textContent = "Tap the crescent moon ☾ and flowers ✿ to see magic !";
-  }
+// themeToggle.addEventListener('click', (e) => {
+//   isThemeToggleClick = !isThemeToggleClick;
+//   body.classList.toggle("day-mode");
+//   if (!isThemeToggleClick) {
+//     modeLabel.textContent = "Midnight Garden";
+//     userGuide.textContent = "Tap the crescent moon ☾ and flowers ✿ to see magic !";
+//   }
 
-  else {
-    modeLabel.textContent = "Sunlit Garden";
+//   else {
+//     modeLabel.textContent = "Sunlit Garden";
+//     userGuide.textContent = "Tap the sun ☼ and flowers ✿ to see magic !";
+//   }
+
+
+// })
+themeToggle.addEventListener('click', (e) => {
+ if(localStorage.getItem("theme")==="dark"){
+  localStorage.setItem("theme","light");
+   body.classList.add("day-mode");
+ modeLabel.textContent = "Sunlit Garden";
     userGuide.textContent = "Tap the sun ☼ and flowers ✿ to see magic !";
-  }
+}else{
+  localStorage.setItem("theme","dark");
+   body.classList.remove("day-mode");
+ modeLabel.textContent = "Midnight Garden";
+    userGuide.textContent = "Tap the crescent moon ☾ and flowers ✿ to see magic !";
+}
 
 
 })
 
+function themeChange(){
+  if(!localStorage.getItem("theme")){
+        body.classList.remove("day-mode");
+localStorage.setItem("theme","dark");
+  modeLabel.textContent = "Midnight Garden";
+    userGuide.textContent = "Tap the crescent moon ☾ and flowers ✿ to see magic !";
+    return;
+  }
+
+if(localStorage.getItem("theme")==="dark"){
+    body.classList.remove("day-mode");
+  modeLabel.textContent = "Midnight Garden";
+    userGuide.textContent = "Tap the crescent moon ☾ and flowers ✿ to see magic !";
+}
+
+if(localStorage.getItem("theme")==="light"){
+    body.classList.add("day-mode");
+   modeLabel.textContent = "Sunlit Garden";
+    userGuide.textContent = "Tap the sun ☼ and flowers ✿ to see magic !";
+}
+
+}
+
+themeChange();
 
 flowers.forEach(flower => {
   flower.addEventListener('click', (e) => {
