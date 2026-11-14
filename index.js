@@ -9,23 +9,6 @@ const userGuide = document.querySelector("#user-guide");
 
 const flowers = document.querySelectorAll(".flower");
 
-let isThemeToggleClick = false;
-
-// themeToggle.addEventListener('click', (e) => {
-//   isThemeToggleClick = !isThemeToggleClick;
-//   body.classList.toggle("day-mode");
-//   if (!isThemeToggleClick) {
-//     modeLabel.textContent = "Midnight Garden";
-//     userGuide.textContent = "Tap the crescent moon ☾ and flowers ✿ to see magic !";
-//   }
-
-//   else {
-//     modeLabel.textContent = "Sunlit Garden";
-//     userGuide.textContent = "Tap the sun ☼ and flowers ✿ to see magic !";
-//   }
-
-
-// })
 themeToggle.addEventListener('click', (e) => {
  if(localStorage.getItem("theme")==="dark"){
   localStorage.setItem("theme","light");
